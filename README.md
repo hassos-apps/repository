@@ -12,4 +12,4 @@ Home Assistant addon repository by hassos-apps.
 
 | Addon | Description |
 |---|---|
-| (coming soon) | |
+| [Example](https://github.com/hassos-apps/addon-example) | Example addon - hassos-apps |

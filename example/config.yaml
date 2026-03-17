@@ -4,6 +4,7 @@ version: 1.0.2
 slug: example
 description: Example addon - hassos-apps
 url: https://github.com/hassos-apps/addon-example
+image: ghcr.io/hassos-apps/example-{arch}
 init: false
 arch:
   - aarch64
