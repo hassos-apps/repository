@@ -1,11 +1,12 @@
 ---
 name: Example
-version: 1.0.5
+version: 1.0.6
 slug: example
 description: Example addon - hassos-apps
 url: https://github.com/hassos-apps/addon-example
 image: ghcr.io/hassos-apps/example-{arch}
 init: false
+startup: application
 arch:
   - aarch64
   - amd64
