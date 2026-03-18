@@ -16,8 +16,7 @@ Or click the badge above to add the repository directly.
 
 | App | Description | Version | Architectures |
 |-----|-------------|---------|---------------|
-| [BunkerM](https://github.com/hassos-apps/app-bunkerm) | MQTT Management Platform — Mosquitto broker with web UI | 1.0.3 | amd64 |
-| [Example](https://github.com/hassos-apps/app-example) | Template/example app | 1.0.6 | amd64, aarch64 |
+| [Example](https://github.com/hassos-apps/app-example) | Example app for the HassOS Apps ecosystem | 1.0.0 | amd64, aarch64 |
 
 ## About
 
