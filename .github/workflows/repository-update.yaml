@@ -57,6 +57,44 @@ jobs:
 
           rm -rf _app_src
 
+      - name: Regenerate README app table
+        run: |
+          # Build the app table from synced config.yaml files
+          table="| App | Description | Version | Architectures |\n"
+          table+="|-----|-------------|---------|---------------|\n"
+
+          for dir in */; do
+            slug="${dir%/}"
+            config="${slug}/config.yaml"
+
+            # Skip non-app directories
+            [ -f "${config}" ] || continue
+
+            name=$(yq e '.name' "${config}")
+            desc=$(yq e '.description' "${config}")
+            version=$(yq e '.version' "${config}")
+            archs=$(yq e '.arch | join(", ")' "${config}")
+            url=$(yq e '.url' "${config}")
+
+            table+="| [${name}](${url}) | ${desc} | ${version} | ${archs} |\n"
+          done
+
+          # Replace the table in README.md between markers
+          awk -v table="$(echo -e "${table}")" '
+            /^## Available Apps/ {
+              print
+              print ""
+              print table
+              skip = 1
+              next
+            }
+            /^## / && skip {
+              skip = 0
+            }
+            !skip { print }
+          ' README.md > README.tmp
+          mv README.tmp README.md
+
       - name: Commit and push
         run: |
           app="${{ github.event.client_payload.addon }}"
@@ -65,7 +103,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-          git add "${app}/"
+          git add .
           if git diff --staged --quiet; then
             echo "No changes to commit"
           else
