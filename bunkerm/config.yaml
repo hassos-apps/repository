@@ -1,6 +1,6 @@
 ---
 name: BunkerM
-version: 1.0.1
+version: 1.0.2
 slug: bunkerm
 description: MQTT Management Platform - Mosquitto broker with web-based management UI
 url: https://github.com/hassos-apps/addon-bunkerm
