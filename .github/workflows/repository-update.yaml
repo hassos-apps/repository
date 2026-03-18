@@ -79,17 +79,18 @@ jobs:
             table+="| [${name}](${url}) | ${desc} | ${version} | ${archs} |\n"
           done
 
-          # Replace the table in README.md between markers
-          awk -v table="$(echo -e "${table}")" '
+          # Replace the table in README.md between "## Available Apps" and the next "##"
+          awk -v table="$(printf '%b' "${table}")" '
             /^## Available Apps/ {
               print
               print ""
-              print table
+              printf "%s\n", table
               skip = 1
               next
             }
             /^## / && skip {
               skip = 0
+              print ""
             }
             !skip { print }
           ' README.md > README.tmp
