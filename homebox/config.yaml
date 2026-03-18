@@ -1,7 +1,7 @@
 # Home Assistant App configuration
 # Docs: https://developers.home-assistant.io/docs/apps/configuration
 name: "Homebox"
-version: "0.26.0"
+version: "0.24.2"
 slug: "homebox"
 description: "Inventory and organization system for the Home User"
 url: "https://github.com/hassos-apps/app-homebox"
@@ -12,8 +12,11 @@ image: "ghcr.io/hassos-apps/homebox-{arch}"
 init: false
 startup: application
 boot: auto
-ingress: true
-ingress_port: 8099
+ingress: false
+ports:
+  "7745/tcp": 7745
+ports_description:
+  "7745/tcp": "Homebox web interface"
 homeassistant_api: false
 auth_api: false
 map:
