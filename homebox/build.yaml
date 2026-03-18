@@ -1,0 +1,10 @@
+build_from:
+  amd64: ghcr.io/hassio-addons/base:20.0.1
+  aarch64: ghcr.io/hassio-addons/base:20.0.1
+args:
+  HOMEBOX_VERSION: "0.24.2"
+labels:
+  org.opencontainers.image.title: "Homebox"
+  org.opencontainers.image.description: "Inventory and organization system for the Home User"
+  org.opencontainers.image.source: "https://github.com/hassos-apps/app-homebox"
+  org.opencontainers.image.licenses: "MIT"

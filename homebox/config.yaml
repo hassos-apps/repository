@@ -1,0 +1,26 @@
+# Home Assistant App configuration
+# Docs: https://developers.home-assistant.io/docs/apps/configuration
+name: "Homebox"
+version: "0.24.2"
+slug: "homebox"
+description: "Inventory and organization system for the Home User"
+url: "https://github.com/hassos-apps/app-homebox"
+arch:
+  - amd64
+  - aarch64
+image: "ghcr.io/hassos-apps/homebox-{arch}"
+init: false
+startup: application
+boot: auto
+ingress: true
+ingress_port: 7745
+homeassistant_api: false
+auth_api: false
+map:
+  - type: ssl
+    read_only: true
+backup: hot
+options:
+  log_level: info
+schema:
+  log_level: list(trace|debug|info|notice|warning|error|fatal)?
