@@ -26,7 +26,7 @@ jobs:
           path: _app_src
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Copy app files to index
+      - name: Sync app files to index
         run: |
           app="${{ github.event.client_payload.addon }}"
           src="_app_src/${app}"
@@ -34,13 +34,26 @@ jobs:
 
           mkdir -p "${dst}"
 
-          # Copy config and assets
-          for f in config.yaml build.yaml icon.png logo.png DOCS.md CHANGELOG.md; do
+          # Sync all HA-required files
+          for f in config.yaml build.yaml DOCS.md CHANGELOG.md icon.png logo.png apparmor.txt; do
             if [ -f "${src}/${f}" ]; then
               cp "${src}/${f}" "${dst}/${f}"
-              echo "Copied ${f}"
+              echo "Synced ${f}"
             fi
           done
+
+          # Sync translations directory
+          if [ -d "${src}/translations" ]; then
+            rm -rf "${dst}/translations"
+            cp -r "${src}/translations" "${dst}/translations"
+            echo "Synced translations/"
+          fi
+
+          # Copy app README from repo root (not slug dir)
+          if [ -f "_app_src/README.md" ]; then
+            cp "_app_src/README.md" "${dst}/README.md"
+            echo "Synced README.md"
+          fi
 
           rm -rf _app_src
 

@@ -1,0 +1,7 @@
+configuration:
+  log_level:
+    name: Log level
+    description: The log level for this app.
+  seconds_between_quotes:
+    name: Seconds between quotes
+    description: How often (in seconds) to log a new random quote.

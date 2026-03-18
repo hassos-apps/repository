@@ -1,4 +1,9 @@
----
 build_from:
-  aarch64: ghcr.io/hassio-addons/base:20.0.1
   amd64: ghcr.io/hassio-addons/base:20.0.1
+  aarch64: ghcr.io/hassio-addons/base:20.0.1
+args: {}
+labels:
+  org.opencontainers.image.title: "Example"
+  org.opencontainers.image.description: "Example app for the HassOS Apps ecosystem"
+  org.opencontainers.image.source: "https://github.com/hassos-apps/app-example"
+  org.opencontainers.image.licenses: "MIT"
