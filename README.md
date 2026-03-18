@@ -13,3 +13,4 @@ Home Assistant addon repository by hassos-apps.
 | Addon | Description |
 |---|---|
 | [Example](https://github.com/hassos-apps/addon-example) | Example addon - hassos-apps |
+| [BunkerM](https://github.com/hassos-apps/addon-bunkerm) | MQTT Management Platform - Mosquitto broker with web UI |
