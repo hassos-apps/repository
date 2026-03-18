@@ -17,7 +17,6 @@ Or click the badge above to add the repository directly.
 | App | Description | Version | Architectures |
 |-----|-------------|---------|---------------|
 | [Example](https://github.com/hassos-apps/app-example) | Example app for the HassOS Apps ecosystem | 1.0.0 | amd64, aarch64 |
-
 ## How It Works
 
 This repository is the **app store index** for the HassOS Apps ecosystem.
