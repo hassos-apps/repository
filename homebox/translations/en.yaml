@@ -1,4 +1,22 @@
 configuration:
   log_level:
     name: Log level
-    description: The log level of the app
+    description: The log verbosity level
+  allow_registration:
+    name: Allow registration
+    description: Allow new users to register accounts
+  max_upload_size:
+    name: Max upload size (MB)
+    description: Maximum file upload size in megabytes
+  auto_increment_asset_id:
+    name: Auto-increment asset ID
+    description: Automatically generate sequential asset IDs
+  allow_analytics:
+    name: Allow analytics
+    description: Allow usage telemetry collection
+  github_release_check:
+    name: GitHub release check
+    description: Check for new Homebox releases on GitHub
+  thumbnail_enabled:
+    name: Thumbnails
+    description: Generate image thumbnails for attachments
