@@ -11,7 +11,7 @@ concurrency:
 
 jobs:
   update:
-    name: Update addon "${{ github.event.client_payload.addon }}"
+    name: Update app "${{ github.event.client_payload.addon }}"
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -19,43 +19,43 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Checkout addon repo
+      - name: Checkout app repo
         uses: actions/checkout@v4
         with:
           repository: ${{ github.event.client_payload.repository }}
-          path: _addon_src
+          path: _app_src
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Copy addon files to index
+      - name: Copy app files to index
         run: |
-          addon="${{ github.event.client_payload.addon }}"
-          src="_addon_src/${addon}"
-          dst="${addon}"
+          app="${{ github.event.client_payload.addon }}"
+          src="_app_src/${app}"
+          dst="${app}"
 
           mkdir -p "${dst}"
 
           # Copy config and assets
-          for f in config.yaml build.yaml icon.png logo.png DOCS.md; do
+          for f in config.yaml build.yaml icon.png logo.png DOCS.md CHANGELOG.md; do
             if [ -f "${src}/${f}" ]; then
               cp "${src}/${f}" "${dst}/${f}"
               echo "Copied ${f}"
             fi
           done
 
-          rm -rf _addon_src
+          rm -rf _app_src
 
       - name: Commit and push
         run: |
-          addon="${{ github.event.client_payload.addon }}"
+          app="${{ github.event.client_payload.addon }}"
           version="${{ github.event.client_payload.version }}"
 
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-          git add "${addon}/"
+          git add "${app}/"
           if git diff --staged --quiet; then
             echo "No changes to commit"
           else
-            git commit -m "Update ${addon} to ${version}"
+            git commit -m "Update ${app} to ${version}"
             git push
           fi

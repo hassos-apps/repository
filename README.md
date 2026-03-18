@@ -1,16 +1,16 @@
 # hassos-apps Repository
 
-Home Assistant addon repository by hassos-apps.
+Home Assistant app repository by hassos-apps.
 
 ## Installation
 
-1. In Home Assistant, go to **Settings → Add-ons → Add-on Store**
+1. In Home Assistant, go to **Settings → Apps → App Store**
 2. Click the menu (⋮) → **Repositories**
 3. Add: `https://github.com/hassos-apps/repository`
 
-## Addons
+## Apps
 
-| Addon | Description |
+| App | Description |
 |---|---|
-| [Example](https://github.com/hassos-apps/addon-example) | Example addon - hassos-apps |
-| [BunkerM](https://github.com/hassos-apps/addon-bunkerm) | MQTT Management Platform - Mosquitto broker with web UI |
+| [Example](https://github.com/hassos-apps/app-example) | Example app - hassos-apps |
+| [BunkerM](https://github.com/hassos-apps/app-bunkerm) | MQTT Management Platform - Mosquitto broker with web UI |
