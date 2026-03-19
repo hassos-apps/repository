@@ -18,6 +18,7 @@ Or click the badge above to add the repository directly.
 |-----|-------------|---------|---------------|
 | [Example](https://github.com/hassos-apps/app-example) | Example app for the HassOS Apps ecosystem | 1.0.0 | amd64, aarch64 |
 | [Homebox](https://github.com/hassos-apps/app-homebox) | Inventory and organization system for the Home User | 0.24.2 | amd64, aarch64 |
+| [Shelly Manager](https://github.com/hassos-apps/app-shelly-manager) | Local management for Shelly IoT devices without cloud connectivity. | 1.0.0 | amd64, aarch64 |
 
 ## How It Works
 

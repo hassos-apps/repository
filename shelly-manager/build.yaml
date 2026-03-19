@@ -1,0 +1,9 @@
+build_from:
+  amd64: ghcr.io/hassio-addons/base:20.0.1
+  aarch64: ghcr.io/hassio-addons/base:20.0.1
+args: {}
+labels:
+  org.opencontainers.image.title: "Shelly Manager"
+  org.opencontainers.image.description: "Local management for Shelly IoT devices without cloud connectivity."
+  org.opencontainers.image.source: "https://github.com/hassos-apps/app-shelly-manager"
+  org.opencontainers.image.licenses: "MIT"
